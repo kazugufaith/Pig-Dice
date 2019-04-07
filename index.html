@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Pig Dice</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-   <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="card header" id="card">
-        <h1 class="display-4">PIG DICE</h1>
-        <hr class="my-8">
-        <button type="button" name="button" id="instructions" class="btn btn-primary">How To Play</button>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pig Dice</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="card header" id="card">
+      <h1 class="display-4">PIG DICE</h1>
+      <hr class="my-8">
+      <button type="button" name="button" id="instructions" class="btn btn-primary">How To Play</button>
       <div class="drop">
         <h2><strong>How To Play:</strong></h2>
         <ol>
-                <li>Roll the dice when it's your turn to play the game.</li>
-                <li>If the player rolls 1, they score nothing and it becomes the next player's turn.</li>
-                <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-                <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-                <li>The first player to score 100 or more points wins.</li>
-              </ol>
+          <li>Roll the dice when it's your turn to play the game.</li>
+          <li>If the player rolls 1, they score nothing and it becomes the next player's turn.</li>
+          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+          <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          <li>The first player to score 100 or more points wins.</li>
+        </ol>
+      </div>
+      <div class="row" id="intro">
+        <div class="col-md-5">
+          <form id="num1">
+            <h2>Player 1</h2>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First player name">
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="save1">Save</button>
+          </form>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" id="play">PLAY</button>
+        </div>
+        <div class="col-md-5">
+          <form id="num2">
+            <h2>Player 2</h2>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Second player name">
+              </div>
             </div>
-                <div class="row" id="intro">
-                  <div class="col-md-5">
-                    <form id="num1">
-                      <h2>Player 1</h2>
-                      <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="First player name">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" id="save1">Save</button>
-                      </form>
-                        </div>
-                    <div class="col-md-2">
-                      <button type="button" class="btn btn-primary" id="play">PLAY</button>
-                    </div>
-                    <div class="col-md-5">
-                      <form id="num2">
-                        <h2>Player 2</h2>
-                        <div class="row">
-                          <div class="col">
-                            <input type="text" class="form-control" placeholder="Second player name">
-                          </div></div>
-                        <button type="submit" class="btn btn-primary" id="save2">Save</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-fluid" id="game">
-                  <div class="row">
-                    <div class="col-md-5 col-sm-5">
-                      <div class="card" id="player1">
-                        <h1 id="winnerp1"></h1>
-                        <h1 id="one">Player 1(Default)</h1>
-                        <p id="p1game">0</p>
-                        <p id="p1round">Round: 0</p>
-                      </div>
-                    </div><div class="col-md-2 col-sm-2">
-                      <div class="card">
-                        <div class="dice"></div>
-                        <p id="lands">0</p>
-                        <button type="button" name="button" id="roll" class="btn btn-primary btn-block">Roll</button>
-                        <button type="button" name="button" id="hold" class="btn btn-primary btn-block">Hold</button>
-                        <button type="button" name="button" id="restart" class="btn btn-primary btn-block">Restart</button>
-                      </div>
-                    </div>
-                    <div class="col-md-5 col-sm-5">
-                      <div class="card" id="player2">
-                        <h1 id="winnerp2"></h1>
-                        <h1 id="two">Player 2(Default)</h1>
-                        <p id="p2game">0</p>
-                        <p id="p2round">Round: 0</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-                <script type="text/javascript" src="js/scripts.js"></script>
-
-                
+            <button type="submit" class="btn btn-primary" id="save2">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="game">
+      <div class="row">
+        <div class="col-md-5 col-sm-5">
+          <div class="card" id="player1">
+            <h1 id="winnerp1"></h1>
+            <h1 id="one">Player 1(Default)</h1>
+            <p id="p1game">0</p>
+            <p id="p1round">Round: 0</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <div class="card">
+            <div class="dice"></div>
+            <p id="lands">0</p>
+            <button type="button" name="button" id="roll" class="btn btn-primary btn-block">Roll</button>
+            <button type="button" name="button" id="hold" class="btn btn-primary btn-block">Hold</button>
+            <button type="button" name="button" id="restart" class="btn btn-primary btn-block">Restart</button>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+          <div class="card" id="player2">
+            <h1 id="winnerp2"></h1>
+            <h1 id="two">Player 2(Default)</h1>
+            <p id="p2game">0</p>
+            <p id="p2round">Round: 0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 
 
-  </body>
+
+
+</body>
+
 </html>
