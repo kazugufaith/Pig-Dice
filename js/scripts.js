@@ -116,6 +116,7 @@ $(document).ready(function() {
   $("#num2").submit(function(event) {
    event.preventDefault();
    var name2 = $("#name2").val();
+   console.log(name2);
    var playerTwo = new Player(name2);
    $("#two").text(playerTwo.name());
    if (name2 == "") {
@@ -129,6 +130,10 @@ $(document).ready(function() {
  $("#play").click(function() {
     $("#intro").hide();
     $("#game").show();
+    var x =$("#name1").val();
+    var y =$("#name2").val();
+    $("#one").html(x);
+    $("#two").html(y);
 });
 
 
