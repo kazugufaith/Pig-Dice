@@ -27,7 +27,10 @@ ol{
   font-family: 'Cormorant Garamond', serif;
 }
 .drop{
-  text-align: center;
+  text-align: ;
+}
+ol{
+  text-align: left;
 }
 #p1round, #p1game, #p2round, #p2game{
   font-size: 300%;

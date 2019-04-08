@@ -10,13 +10,13 @@ var gameScorep2 = 0;
 var landsOn = 0;
 
 
-function Player(first, last) {
-  this.firstName = first;
-   this.lastName = last;
+function Player(firstPlayer ) {
+  this.firstPlayerName = firstPlayer;
+   /*this.lastName = last;*/
  };
 
- Player.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
+ Player.prototype.name = function() {
+  return this.secondPlayerName  /* this.lastName;*/
 };
 function roll() {
  landsOn = Math.floor(Math.random() *6) + 1;
@@ -108,7 +108,7 @@ $(document).ready(function() {
     var fname1 = $("#fname1").val();
     var lname1 = $("#lname1").val();
     var playerOne = new Player(fname1, lname1);
-    $("#one").text(playerOne.fullName());
+    $("#one").text(playerOne.fulName());
     if (fname1 == "" || lname1 == "") {
       alert("Please enter both names");
     }
@@ -139,7 +139,6 @@ $(document).ready(function() {
 
 $("#roll").click(function() {
   roll();
-  $(".dice").empty().append("<img src='img/die1"+ landsOn + ".png' alt='dice' width='100%'>");
   $("#lands").text(landsOn);
   round();
   $("#p1round").text("Round: " + roundScorep1);
@@ -155,7 +154,7 @@ $("#hold").click(function() {
     $("#winner" + currentPlayer).text("WINNER!");
     $("#roll").attr("disabled", true);
     $("#hold").attr("disabled", true);
-    
+
   }
   else {
     turn();
@@ -165,7 +164,7 @@ $("#hold").click(function() {
   $("#hold").attr("disabled", true);
 });
 
-$("#rules").click(function() {
+$("#instructions").click(function() {
   $(".drop").toggle();
 });
 });
