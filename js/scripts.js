@@ -10,13 +10,13 @@ var gameScorep2 = 0;
 var landsOn = 0;
 
 
-function Player(firstPlayer ) {
+function Player(firstPlayerName, secondPlayerName ) {
   this.firstPlayerName = firstPlayer;
-   /*this.lastName = last;*/
+  this.secondPlayerName = secondPlayer;
  };
 
  Player.prototype.name = function() {
-  return this.secondPlayerName  /* this.lastName;*/
+  return this.firstPlayerName, this.secondPlayerName;
 };
 function roll() {
  landsOn = Math.floor(Math.random() *6) + 1;
@@ -98,33 +98,28 @@ if (currentPlayer == "p2") {
 
 //User Interface Logic
 $(document).ready(function() {
-  $("#play").attr("disabled", true);
-  $("#save2").attr("disabled", true);
+  $("#play").attr("disabled", false);
+  $("#save2").attr("disabled", false);
   $("#restart").click(function() {
     gameReset();
   });
   $("#num1").submit(function(event) {
-    event.preventDefault();
-    var fname1 = $("#fname1").val();
-    var lname1 = $("#lname1").val();
-    var playerOne = new Player(fname1, lname1);
-    $("#one").text(playerOne.fulName());
-    if (fname1 == "" || lname1 == "") {
-      alert("Please enter both names");
-    }
-    else{
-      $("#save2").attr("disabled", false);
-    }
+  event.preventDefault();
+   var name1 = $("#name1").val();
+   var playerOne = new Player(name1);
+   $("#one").text(playerOne.name());
+  if (name1 == "") {
+  alert("Please enter name");
+ }
   });
 
   $("#num2").submit(function(event) {
    event.preventDefault();
-   var fname2 = $("#fname2").val();
-   var lname2 = $("#lname2").val();
-   var playerTwo = new Player(fname2, lname2);
-   $("#two").text(playerTwo.fullName());
-   if (fname2 == "" || lname2 == "") {
-     alert("Please enter both names");
+   var name2 = $("#name2").val();
+   var playerTwo = new Player(name2);
+   $("#two").text(playerTwo.name());
+   if (name2 == "") {
+     alert("Please enter name");
    }
    else{
      $("#play").attr("disabled", false);
