@@ -1,0 +1,72 @@
+body{
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header{
+  margin-bottom: 5%;
+}
+ol{
+  text-align: right;
+}
+.card{
+  background-color: #00BFFF;
+  text-align: center;
+}
+#oops-p1, #oops-p2{
+  display: none;
+  color: red;
+}
+#lands{
+  font-size: 300%;
+  text-align: center;
+}
+#instruction{
+  width: 30%;
+/*  margin-left: 35%;*/
+  font-family: 'Cormorant Garamond', serif;
+}
+.drop{
+  text-align: center;
+}
+#p1round, #p1game, #p2round, #p2game{
+  font-size: 300%;
+}
+#active{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#game{
+  display: none;
+}
+form{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin-top: 5px;
+}
+h2{
+text-align: center;
+}
+#play, #save1, #save2{
+  margin-top: 10px;
+  width: 30%;
+  margin-left: 35%;
+}
+//*.over img{
+  width: 20%;
+  margin-left: 40%;
+}*/
+#winnerp1, #winnerp2{
+  color: red;
+}
+.num1{
+  font-family: 'Playfair Display SC', serif;
+}
+.num2{
+  font-family: 'Playfair Display SC', serif;
+}
+h1{
+  font-family: 'Cinzel', serif;
+}
+#player1,#player2{
+  font-family: 'El Messiri', sans-serif;
+}
